@@ -1,4 +1,5 @@
 mcLearn
 =======
 
-Playing with machine learning techniques
+Playing with different machine learning techniques. 
+
