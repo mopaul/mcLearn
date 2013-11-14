@@ -112,7 +112,7 @@ J_vals = J_vals';
 figure;
 surf(theta0_vals, theta1_vals, J_vals)
 xlabel('\theta_0'); ylabel('\theta_1');
-
+pause
 % Contour plot
 figure;
 % Plot J_vals as 15 contours spaced logarithmically between 0.01 and 100
