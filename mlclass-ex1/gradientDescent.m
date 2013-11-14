@@ -18,11 +18,7 @@ for iter = 1:num_iters
     %
 
     T = X*theta - y;
-    theta0 = theta(1) - alpha*(1/m*sum(T));
-    theta1 = theta(2) - alpha*(1/m*sum(T.*X(:, 2)));
-    %thetaTail = theta(2:m) - (alpha* (1/m * sum(T.*X(:,2)) ));
-    theta = [theta0; theta1];
-
+    theta = theta - alpha*( (X'*T)/m );
     % ============================================================
 
     % Save the cost J in every iteration    
