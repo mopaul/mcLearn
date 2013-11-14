@@ -82,7 +82,10 @@ X = [ones(m, 1) X];
 fprintf('Running gradient descent ...\n');
 
 % Choose some alpha value
-alpha = 0.03;
+% tested with 0.01, 0.03, 0.1, 0.3. 
+% Gradient Descent converged better with increase in alpha vals.
+% i think alpha = 0.03 gives good estimate. 
+alpha = 0.1;
 num_iters = 400;
 
 % Init Theta and Run Gradient Descent 
@@ -91,7 +94,7 @@ theta = zeros(3, 1);
 
 % Plot the convergence graph
 figure;
-plot(1:numel(J_history), J_history, '-b', 'LineWidth', 2);
+plot(1:numel(J_history), J_history, '-g', 'LineWidth', 2);
 xlabel('Number of iterations');
 ylabel('Cost J');
 
@@ -104,7 +107,8 @@ fprintf('\n');
 % ====================== YOUR CODE HERE ======================
 % Recall that the first column of X is all-ones. Thus, it does
 % not need to be normalized.
-price = 0; % You should change this
+x = ([1650, 3] - mu) ./ sigma;
+price = [1, x]*theta; % You should change this
 
 
 % ============================================================
@@ -149,7 +153,8 @@ fprintf('\n');
 
 % Estimate the price of a 1650 sq-ft, 3 br house
 % ====================== YOUR CODE HERE ======================
-price = 0; % You should change this
+% Ans is 293081.464335
+price = [1, 1650, 3]*theta; % You should change this
 
 
 % ============================================================
