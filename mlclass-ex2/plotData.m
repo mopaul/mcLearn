@@ -12,13 +12,20 @@ figure; hold on;
 %               examples and 'ko' for the negative examples.
 %
 
-
-
-
-
-
-
-
+posX = [];
+negX = [];
+m = length(y);
+for i=1:m,
+	if (y(i)==1)
+		posX = [posX; X(i, :)];
+	else
+		negX = [negX; X(i, :)];
+	end;
+end;
+%positive samples
+plot(posX(:, 1), posX(:, 2), 'k+', 'MarkerSize', 7, 'LineWidth', 2);
+hold on;
+plot(negX(:, 1), negX(:, 2), 'ko', 'MarkerSize', 10, 'MarkerFaceColor', 'g');
 
 % =========================================================================
 
